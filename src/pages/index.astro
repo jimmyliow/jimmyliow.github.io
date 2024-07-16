@@ -1,0 +1,89 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Navigator from "../components/Navigator.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+
+import { getCollection } from "astro:content";
+import FormattedDate from "../components/FormattedDate.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
+);
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <main class="mx-auto max-w-4xl px-4 md:px-0">
+      <Header title={SITE_TITLE} description={SITE_DESCRIPTION} />
+      <Navigator />
+      <div class="content">
+        <div class="hero">
+          <div class="hero__says">
+            <article class="prose dark:prose-dark" data-astro-cid-apjhz64k="">
+              <p>
+                <strong>Astro-Ink</strong> is a crisp, minimal, personal blog theme
+                for Astro, that shows the capability of statically built sites -
+                offering all the goodness and DX of the modern JS ecosystem without
+                actually shipping any JS by default. And, above all…
+              </p>
+              <h3 id="its-open-source">It’s Open-Source!</h3>
+              <p>
+                <strong>Maintained By:</strong> Aftab Alam // <a
+                  href="https://twitter.com/aftabbuddy">@aftabbuddy</a
+                > // <a href="https://github.com/one-aalam">one-aalam</a>
+              </p>
+            </article>
+          </div>
+        </div>
+        <hr />
+        <section>
+          <ul>
+            {
+              posts.map((post) => (
+                <li>
+                  <a href={`/blog/${post.slug}/`}>
+                    <h4 class="title">{post.data.title}</h4>
+                    <p class="date">
+                      <FormattedDate date={post.data.pubDate} />
+                    </p>
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+      </div>
+      <br class="my-4" />
+    </main>
+    <Footer />
+  </body>
+</html>
+<style>
+  .hero {
+      @apply flex flex-col md:flex-row gap-8 w-full transition-all pb-4
+  }
+  .hero__face {
+      @apply flex md:flex-none justify-center
+  }
+  .hero__says {
+      @apply flex-1 text-center md:text-left
+  }
+    .author-card {
+        @apply  h-48 w-48 md:h-56 rounded-full md:rounded-md shadow-lg
+    }
+    .author-card img {
+        @apply rounded-full h-48 w-48 md:h-56
+    }
+    .page__actions {
+        @apply flex justify-center md:justify-end py-6
+    }
+    .action__go-to-blog {
+        @apply py-4 hover:underline
+    }
+</style>
