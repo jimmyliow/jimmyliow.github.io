@@ -1,0 +1,46 @@
+---
+import BaseHead from "@/components/BaseHead.astro";
+import Header from "@/components/Header.astro";
+import Menu from "@/components/Menu.astro";
+import Footer from "@/components/Footer.astro";
+import { SITE } from '@/consts'
+
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <BaseHead title={SITE.title} description={SITE.description} />
+  </head>
+  <body>
+    <main class="mx-auto max-w-4xl px-4 md:px-0">
+      <Header title={SITE.title} description={SITE.description} />
+      <Menu />
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+<style>
+  .hero {
+      @apply flex flex-col md:flex-row gap-8 w-full transition-all pb-4
+  }
+  .hero__face {
+      @apply flex md:flex-none justify-center
+  }
+  .hero__says {
+      @apply flex-1 text-center md:text-left
+  }
+    .author-card {
+        @apply  h-48 w-48 md:h-56 rounded-full md:rounded-md shadow-lg
+    }
+    .author-card img {
+        @apply rounded-full h-48 w-48 md:h-56
+    }
+    .page__actions {
+        @apply flex justify-center md:justify-end py-6
+    }
+    .action__go-to-blog {
+        @apply py-4 hover:underline
+    }
+</style>

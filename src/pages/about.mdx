@@ -3,47 +3,123 @@ title: 'Using MDX'
 description: 'Lorem ipsum dolor sit amet'
 pubDate: 'Jul 02 2022'
 heroImage: '/blog-placeholder-5.jpg'
+
 ---
-
-This theme comes with the [@astrojs/mdx](https://docs.astro.build/en/guides/integrations-guide/mdx/) integration installed and configured in your `astro.config.mjs` config file. If you prefer not to use MDX, you can disable support by removing the integration from your config file.
-
-## Why MDX?
-
-MDX is a special flavor of Markdown that supports embedded JavaScript & JSX syntax. This unlocks the ability to [mix JavaScript and UI Components into your Markdown content](https://docs.astro.build/en/guides/markdown-content/#mdx-features) for things like interactive charts or alerts.
-
-If you have existing content authored in MDX, this integration will hopefully make migrating to Astro a breeze.
-
-## Example
-
-Here is how you import and use a UI component inside of MDX.
-When you open this page in the browser, you should see the clickable button below.
 
 import HeaderLink from '../components/HeaderLink.astro';
 import Prose from '../components/Prose.astro';
 
-<HeaderLink href="#" onclick="alert('clicked!')">
-	Embedded component in MDX
-</HeaderLink>
+import PageLayout from '@/layouts/default.astro'
 
-## More Links
+<PageLayout>
+  <Prose>
 
-- [MDX Syntax Documentation](https://mdxjs.com/docs/what-is-mdx)
-- [Astro Usage Documentation](https://docs.astro.build/en/guides/markdown-content/#markdown-and-mdx-pages)
-- **Note:** [Client Directives](https://docs.astro.build/en/reference/directives-reference/#client-directives) are still required to create interactive components. Otherwise, all components in your MDX will render as static HTML (no JavaScript) by default.
-<Prose>
+    ## 我是谁
 
-**Astro-Ink** is a crisp, minimal, personal blog theme for Astro, that shows the capability of statically built sites - offering all the goodness and DX of the modern JS ecosystem without actually shipping any JS by default.
+    我是攻城狮，喜欢户外活动，
 
-**Astro-ink** strives to remain minimal & performant while still offering you all the bells and whistles you expect in a personal blog system. Please check the [README](https://github.com/one-aalam/astro-ink/blob/main/README.md) to know about all the features.
+    你可能没有过，徒手意外地攀登上 4 千多米的雪山，简直是累趴了。
 
-## Author
-Aftab Alam // [@aftabbuddy](https://twitter.com/aftabbuddy)  // [one-aalam](https://github.com/one-aalam)
-<div class="author">
-    <img class="rounded-full" width="160" src="https://assets.website-files.com/5e51c674258ffe10d286d30a/5e5358878e2493fbea064dd9_peep-59.svg" title="Aalam" />
-</div>
+    现在左手棒书阅读，右手执笔写作，
 
-### Credits
-**Illustrations:** [openpeeps](https://www.openpeeps.com/)
+    背着书籍，以笔为杖继续攀登人生的高峰。
 
-</Prose>
 
+    **最有成就的事情**
+
+    -   徒步上 4 千多米的雪山
+    -   通过视频学会自游泳和蝶泳
+
+    **我能提供的价值**
+
+    🌞早起践行，在早餐前掌控好每一天
+
+    📖拆书学习，把知识拆为⾃⼰的能⼒
+
+    📝创意写作，把原有的元素重新组合
+
+    ## 工作方式
+
+    以下的工作方式会让我有最佳的工作表现：
+
+    -   上午 10：00- 12:00 喜欢有固定大块的工作时间，不喜欢被在沉浸时间打扰
+    -   如需要协作，建议使用协作工具分配任务，写清楚任务描述与提交时间
+    -   重要信息喜欢接收文字语言，而不是口头语言，例如开会前先有会议主题提要，会议后有纪要等
+    -   有什么感受，有什么事情请直接对我讲（而不是通过其他人），别担心会冒犯我
+    -   习惯先尝试独立解决问题，再寻求帮助
+    -   有压力情况下会表现更好
+    -   喜欢有计划工作，收到消息可能不会立即响应，部分请求可能也不会立即答应
+    -   团队中，一般是不是最显眼的那个，但自信自己成长的力量
+    -   习惯大问题驱动、个人项目驱动、文档驱动
+    -   目前我的工作内容 90% 与技术有关，如果你有相关心得，欢迎赐教。
+
+    ## 联系方式
+
+    -   微信： jimmyliow（加好友时请注明来源和自我介绍）
+    -   简书主页：[https://www.jianshu.com/u/yqsre3](https://www.jianshu.com/u/yqsre3)
+    -   知乎主页：[https://www.zhihu.com/people/jimmy-liow](https://www.zhihu.com/people/jimmy-liow)
+    -   公众号/视频号：廖斋笔谈
+
+    [![pkIYO0K.png](https://s21.ax1x.com/2024/07/16/pkIYO0K.png)](https://imgse.com/i/pkIYO0K)
+
+    微信二维码
+
+    ## 沟通方式
+
+    -   喜欢有准备的沟通，请提前告诉沟通约定时间、内容和预估时间，最好是文本通知
+    -   所有微信群已经静音，不经常看群消息，在群里需要我回应的，务必@我，或私人电话找我
+    -   不建议给我发很长的语音信息，可以的话，建议用语音转文字
+    -   大型文件或重要文件请使用云盘上传后 @ 我，请勿使用微信直接发送，建议使用QQ邮箱发送我QQ邮箱
+    -   聚会或会议上多于 15 个人，我认为是低效的
+    -   有时说话语速比较快也比较直接，对事不对人
+    -   不喜欢争论：善者因之，其次利道之，其次教诲之，其次整齐之，最下者与之争
+    -   厌恶 Word，尽量采用在线文档交换想法
+
+    ## 学习方式
+
+    -   最高效与经济的学习就是阅读与写作，一般 5 点左右起床，阅读与写作 2 个小时
+    -   电子书未主，纸质书未辅
+    -   习惯通过写作学习，定期总结心得
+    -   设定年度 OKR，季度 OKR，每天朝着目标前进
+
+    ## 价值观
+
+    -   终身学习、终身成长
+    -   多元化思维
+    -   为什么？为什么不？
+
+    ## 生活作息
+
+    -   10:30 睡觉，05:30 起床，中午休息半个小时
+
+    ## 初次见面，和我和我聊什么容易破冰？
+
+    建议跟我聊以下话题：
+
+    历史：最近在读那几本历史相关书籍？那几本值得推荐？
+
+    装修：如何5万内完成基本穷装入住？装修最高性价比的是？
+
+    阅读：请任意展开
+
+    写作：请任意展开
+
+    如果可以，个人更建议的方式是参考这份文档，撰写一份“使用说明书”，发送给我
+
+    ## 爱好
+
+    -   看书、看电影
+    -   运动包括：踢球、游泳、羽毛球
+
+    ## 参考
+
+    - [个人使用说明书：如何让团队更好的“使用”你 ？](https://www.feishu.cn/hc/zh-CN/articles/360048137813)
+    - [海程的使用说明书-如何更好地与我沟通协作？](https://mp.weixin.qq.com/s?__biz=MzI5OTE2MjAzMQ==&mid=2648713152&idx=1&sn=755874f967e6896bfe44459634d58cde&chksm=f48e4700c3f9ce166859e7dcf4316eda5a3bff0a5668d980c3316268cffc12d788518beae383&mpshare=1&scene=1&srcid=0607ONFc3YNEVnJdJQDAcSxt&sharer_sharetime=1623024816204&sharer_shareid=182663bd69f73605c7d9df469fec1c78&version=3.1.7.8807&platform=win#rd)
+    - [陈素封使用说明书 V3.6](https://www.yuque.com/hardwaylab/hbcnfeat/fpu2rg)
+    - [如何写一份个人使用说明书？](https://www.getrevue.co/profile/HardWayLab/issues/issue-1291242)
+    - [老纪的使用说明书](https://mp.weixin.qq.com/s/GRzDPLKvOIvByBtHRrVX7A)
+    - [Working with Claire: an unauthorized guide – High Growth Handbook (eladgil.com)](https://growth.eladgil.com/book/the-role-of-the-ceo/insights-working-with-claire/)
+
+    </Prose>
+
+</PageLayout>

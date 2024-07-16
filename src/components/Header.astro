@@ -1,7 +1,6 @@
 ---
-import HeaderLink from "./HeaderLink.astro";
-import { SITE_TITLE } from "../consts";
-import { SITE } from '../consts';
+import { SITE } from '@/consts'
+
 ---
 
 <header class="header">
@@ -12,7 +11,7 @@ import { SITE } from '../consts';
   </div>
 
   <div class="header__meta flex-1">
-    <h3 class="header__title dark:text-theme-dark-secondary">
+    <h3 class="header__title">
       <a href="/">{SITE.title}</a>
     </h3>
     <div class="header__meta-more flex">
@@ -21,8 +20,8 @@ import { SITE } from '../consts';
         <ul class="header__ref-list">
           <li>
             <a
-              href="https://github.com/one-aalam/astro-ink"
-              title="Ink's Github URL'"
+              href="https://github.com/jimmyliow"
+              title="Jimmy Liow"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +68,7 @@ import { SITE } from '../consts';
 
 <style>
   .header {
-        @apply flex gap-4 border-b py-3 /* border-gray-200 dark:border-gray-700 - check styles/global.css */
+        @apply flex gap-4 border-b py-3
   }
   .header__logo-img {
       @apply w-16 h-16 rounded-full overflow-hidden
@@ -78,18 +77,9 @@ import { SITE } from '../consts';
       @apply text-4xl font-extrabold md:text-5xl
   }
   .header__desc {
-      @apply text-xl flex-1 dark:text-gray-200
+      @apply text-xl flex-1
   }
   .header__ref-list {
       @apply flex gap-3 text-gray-400
-  }
-  .page__header {
-    @apply py-4 mb-1;
-  }
-  .page__title {
-    @apply text-5xl;
-  }
-  .page__desc {
-    @apply text-gray-400;
   }
 </style>
