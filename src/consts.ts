@@ -1,7 +1,7 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
-export const SITE_TITLE = '聊斋笔谈';
+export const SITE_TITLE = '廖斋笔谈';
 export const SITE_DESCRIPTION = '胡思乱想并不有趣，有趣是有道理而且还新奇';
 
 export type NavItems = {
@@ -34,8 +34,9 @@ export const NAV_ITEMS: NavItems = {
 
 export const SITE = {
 	name: "廖一军",
-	title: "聊斋笔谈",
+	title: "廖斋笔谈",
 	description: "佛系划水，乘风摸鱼",
+  motto: "胡思乱想并不有趣，有趣是有道理而且还新奇",
 	url: "https://astro-ink.vercel.app",
 	githubUrl: "https://github.com/jimmyliow",
 	listDrafts: true,

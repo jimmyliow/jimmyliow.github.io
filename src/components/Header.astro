@@ -1,67 +1,53 @@
 ---
 import { SITE } from '@/consts'
+import HeaderLink from '@/components/HeaderLink.astro'
 
 ---
-
-<header class="header">
-  <div class="header__logo">
-    <a href="/" class="avatar">
-      <img class="header__logo-img" src="/logo.jpg" alt="Astro logo" />
-    </a>
+<header class="fixed top-0 w-full bg-skin-fill text-skin-base z-10">
+  <div class="container mx-auto max-w-4xl px-4 md:px-0 flex items-center justify-between">
+    <a class="text-2xl p-4" href="/">{SITE.title}</a>
+    <div class="flex items-center">
+      <div class="hidden xl:block">
+        <div class="flex items-center space-x-5 pr-4">
+          <HeaderLink href={"/home"} icon={'ri-draft-line'} target='_self' children={[]}>首页</HeaderLink>
+          <HeaderLink href={"/home"} icon={'category.iconClass'} target='_self' children={[]}>文章</HeaderLink>
+          <HeaderLink href={"/home"} icon={'category.iconClass'} target='_self' children={[]}>标签</HeaderLink>
+          <HeaderLink href={"/home"} icon={'category.iconClass'} target='_self' children={[]}>存档</HeaderLink>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="header__meta flex-1">
-    <h3 class="header__title">
-      <a href="/">{SITE.title}</a>
-    </h3>
-    <div class="header__meta-more flex">
-      <p class="header__desc">{SITE.description}</p>
-      <nav class="header__nav flex">
-        <ul class="header__ref-list">
-          <li>
-            <a
-              href="https://github.com/jimmyliow"
-              title="Jimmy Liow"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path
-                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                ></path>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="/rss.xml" title="RSS">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M4 11a9 9 0 0 1 9 9"></path>
-                <path d="M4 4a16 16 0 0 1 16 16"></path>
-                <circle cx="5" cy="19" r="1"></circle>
-              </svg>
-            </a>
-          </li>
-        </ul>
-      </nav>
+  <div id="personal-info" class="hidden break-all overflow-y-auto pb-8" style="height: calc(100vh - 64px)">
+    <img class="avatar my-4 mx-auto" src={SITE.title} alt="avatar"/>
+    <div class="mb-2 text-center">{SITE.motto}</div>
+    <div class="flex items-center justify-center flex-wrap">
+      <a title={'infoItem.name'} href={'infoItem.name'} target="_blank">
+        <i class={'infoItem.icon' + " text-2xl mr-2 cursor-pointer"}/>
+      </a>
     </div>
+    <div class="divider-horizontal-mini"></div>
+    <div class="text-center">
+      <div>
+        <i class="ri-folder-line menu-icon"/>{'categories'}
+      </div>
+
+      <div class="my-2 break-all truncate">
+        <a class="hover:text-skin-active" title={'category' + " (" + 2 + ")"} href={"/category/" + 'category'}>
+          {'category' + " (" + 10 + ")"}
+        </a>
+      </div>
+
+      <div class="divider-horizontal-mini"></div>
+      <div class="text-center">
+        <i class="ri-price-tag-3-line menu-icon"/>
+        tags
+      </div>
+      <div class="my-2 break-all truncate">
+        <a class="hover:text-skin-active my-2" title={'html'} href={"/tags/" + 'html'}>{'html' + " (" + 10 + ")"}</a>
+      </div>
+    </div>
+
   </div>
 </header>
 
